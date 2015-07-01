@@ -5,4 +5,10 @@ describe("MovieTicket", function() {
     expect(testTicket.showing).to.equal("matinee");
     expect(testTicket.age).to.equal("senior");
   });
+
+  it('prices a ticket based on the user\'s age', function() {
+    var testTicket = new MovieTicket("testmovie", "matinee", "senior");
+    testTicket.price();
+    expect(testTicket.cost).to.equal(5);
+  });
 });
